@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "Prasad-terraform-elb"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  availability_zones = ["ap-south-1a", "ap-south-1b"]
 
   listener {
     instance_port     = 80
@@ -29,7 +29,7 @@ resource "aws_elb" "bar" {
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
   engine_version          = "5.7.mysql_aurora.2.11.2"
-  availability_zones      = ["us-east-1a", "us-east-1b"]
+  availability_zones      = ["ap-south-1a", "ap-south-1b"]
   database_name           = "mydb"
   master_username         = "Prasad
   master_password         = "Prasad#444555"
@@ -39,7 +39,7 @@ resource "aws_elb" "bar" {
 
 /*resource "aws_instance" "one" {
   for_each = toset(["one", "two", "three"])
-  ami           = "ami-00b8917ae86a424c9"
+  ami           = "ami-08fe36427228eddc4"
   instance_type = "t2.micro"
   tags = {
     Name = "instance-${each.key}"
