@@ -1,14 +1,14 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "us-east-1"
+region = "ap-south-1"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-00b8917ae86a424c9"
+  ami             = "ami-08fe36427228eddc4"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -23,11 +23,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-00b8917ae86a424c9"
+  ami             = "ami-08fe36427228eddc4"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1"
+  availability_zone = "ap-south-1"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -42,22 +42,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-00b8917ae86a424c9"
+  ami             = "ami-08fe36427228eddc4"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-00b8917ae86a424c9"
+  ami             = "ami-08fe36427228eddc4"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-2"
   }
