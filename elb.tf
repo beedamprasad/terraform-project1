@@ -39,7 +39,7 @@ resource "aws_elb" "bar" {
 
 /*resource "aws_instance" "one" {
   for_each = toset(["one", "two", "three"])
-  ami           = "ami-08fe36427228eddc4"
+  ami           = "ami-00b8917ae86a424c9"
   instance_type = "t2.micro"
   tags = {
     Name = "instance-${each.key}"
