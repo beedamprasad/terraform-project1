@@ -25,24 +25,3 @@ resource "aws_elb" "bar" {
   }
 }
 
-/*resource "aws_rds_cluster" "default" {
-  cluster_identifier      = "aurora-cluster-demo"
-  engine                  = "aurora-mysql"
-  engine_version          = "5.7.mysql_aurora.2.11.2"
-  availability_zones      = ["ap-south-1", "ap-south-1b"]
-  database_name           = "mydb"
-  master_username         = "Prasad
-  master_password         = "Prasad#444555"
-  backup_retention_period = 5
-  preferred_backup_window = "07:00-09:00"
-}*/
-
-/*resource "aws_instance" "one" {
-  for_each = toset(["one", "two", "three"])
-  ami           = "ami-0c84181f02b974bc3"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "instance-${each.key}"
-  }
-}
-*/
