@@ -1,10 +1,15 @@
 pipeline {
     agent any 
+
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('accesskey')
+        AWS_SECRET_ACCESS_KEY = credentials('secretkey')
+    }
     
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/devopsbyraham/terraform-project.git'
+                git branch: 'main', url: 'https://github.com/beedamprasad/terraform-project1.git'
             }
         }
         stage('init') {
