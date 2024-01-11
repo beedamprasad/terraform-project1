@@ -8,7 +8,7 @@ resource "aws_instance" "one" {
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-south-1"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -46,7 +46,7 @@ resource "aws_instance" "three" {
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-south-1"
   tags = {
     Name = "app-server-1"
   }
@@ -103,7 +103,7 @@ default = ["user1", "user2", "user3"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-south-1a"
+ availability_zone = "ap-south-1b"
   size = 30
   tags = {
     Name = "ebs-001"
