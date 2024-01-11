@@ -4,7 +4,7 @@ region = "ap-south-1"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-08fe36427228eddc4"
+  ami             = "ami-0c84181f02b974bc3"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -23,11 +23,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-08fe36427228eddc4"
+  ami             = "ami-0c84181f02b974bc3"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-south-1"
+  availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -42,7 +42,7 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-08fe36427228eddc4"
+  ami             = "ami-0c84181f02b974bc3"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -53,7 +53,7 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-08fe36427228eddc4"
+  ami             = "ami-0c84181f02b974bc3"
   instance_type   = "t2.micro"
   key_name        = "Linux. Keypair"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -99,12 +99,12 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["user1", "user2", "user3"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "us-east-1a"
-  size = 40
+ availability_zone = "ap-south-1a"
+  size = 30
   tags = {
     Name = "ebs-001"
   }
