@@ -1,0 +1,41 @@
+pipeline {
+    agent any 
+
+    environment {
+        AWS_ACCESS_KEY_ID     = 'access key id'
+        AWS_SECRET_ACCESS_KEY = 'access key'
+    }
+    
+    stages {
+        stage('checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/beedamprasad/terraform-project1.git'
+            }
+        }
+        stage('init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('validate') {
+            steps {
+                sh 'terraform validate'                
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('action') {
+            steps {
+                sh 'terraform $action --auto-approve'
+            }
+        }
+        stage('graph') {
+            steps {
+                sh 'terraform graph'
+            }
+        }
+    }
+}
